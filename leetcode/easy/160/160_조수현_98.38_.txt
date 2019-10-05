@@ -1,0 +1,114 @@
+1차시 실패 .. 이유를 모르겠음
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if(headA == null || headB == null){
+            return new ListNode(0);
+        }
+        headA = reverse(headA);
+        headB = reverse(headB);
+        
+        int last = 0;
+        while(true){
+            // System.out.println("==================");
+            // System.out.println(headA.val);
+            // System.out.println(headB.val);
+            if(headA.val != headB.val || headA.next == null || headB.next == null){
+                break;
+            }
+            last = headA.val;
+            headA = headA.next;
+            headB = headB.next;
+            
+        }
+        return new ListNode(last);
+    }
+    
+    private ListNode reverse(ListNode a){
+        ListNode last = new ListNode(a.val);
+        ListNode current = a;
+        ListNode temp;
+        while(true){
+            if(current.next == null){
+                break;
+            }
+            current = current.next;
+            temp = new ListNode(current.val);
+            temp.next = last;
+            last = temp;
+        }
+        return last;
+    }
+}
+
+
+=> 틀린 이유는 모르겠으나 조건에 O(n) 이어야하고 메모리는 O(1)이어야한다 가있는걸 확인 이게 왜 easy!??!?
+============================================================================================
+2차시
+연산랑 메모리량 둘다 포기 ㅠ 
+통과는 했으나 연산량 메모리량 규칙 못지킴 
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if(headA == null || headB == null){
+            return null;
+        }
+        ListNode a = headA;
+        ListNode b = headB;
+        int aLen = 1;
+        int bLen = 1;
+        while(a.next != null){
+            aLen += 1;
+            a = a.next;
+        }
+        
+        while(b.next != null){
+            bLen += 1;
+            b = b.next;
+        }
+        while(true){
+            if(headA == headB){
+                return headA;
+            }else if(aLen <= 1 && bLen <= 1){
+                break;
+            }
+            if(aLen > bLen){
+                aLen--;
+                headA = headA.next;
+            }else if(aLen < bLen){
+                bLen--;
+                headB = headB.next;
+            }else{
+                aLen--;
+                bLen--;
+                headA = headA.next;
+                headB = headB.next;
+            }
+               
+        }
+        return null;    
+    }
+       
+}

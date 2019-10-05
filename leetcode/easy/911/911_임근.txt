@@ -1,0 +1,26 @@
+﻿/**
+ * @param {string} name
+ * @param {string} typed
+ * @return {boolean}
+ */
+var isLongPressedName = function(name, typed) {
+    let i = 0;
+    let j = 0;
+    let result = 0;
+
+    if(name.length === typed.length) return true;
+    
+    for(var a=0; a<typed.length; a++){
+        if(name[i] === typed[j]){
+            i++; j++; result++;
+        }else if(name[i] !== typed[j]) {
+            if(name[i-1] === typed[j]){
+                j++;
+            }else{
+                return false;
+            }
+        }
+    }
+    
+    return result === name.length ? true : false;
+};

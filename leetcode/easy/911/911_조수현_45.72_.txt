@@ -1,0 +1,118 @@
+class TopVotedCandidate(object):
+
+    def __init__(self, persons, times):
+        """
+        :type persons: List[int]
+        :type times: List[int]
+        """
+        topList = {}
+        self.time_table = {}
+        self.last_person = persons[0]
+        time = 0
+        max = 0
+        for index in range(len(persons)):
+            person = persons[index]
+            if  person not in topList:
+                topList[person] = 1
+            else:
+                topList[person] += 1
+
+
+            if max <= topList[person]:
+                max = topList[person]
+                for i in range(time, times[index]):
+                    self.time_table[i] = self.last_person
+                time = times[index]
+                self.last_person = person
+
+    def q(self, t):
+        """
+        :type t: int
+        :rtype: int
+        """
+        if t in self.time_table:
+            return self.time_table[t]
+        else:
+            return self.last_person
+
+======================================================================================================================
+1차시 시간 초과
+import operator
+class TopVotedCandidate(object):
+
+    def __init__(self, persons, times):
+        """
+        :type persons: List[int]
+        :type times: List[int]
+        """
+        self.timeTable = []
+        topList = {}
+        for index in range(len(persons)):
+            
+            
+            if persons[index] not in topList:
+                topList[persons[index]] = [times[index], 1]
+            else:
+                tmp = topList[persons[index]]
+                tmp[1] += 1
+                tmp[0] = times[index]
+                topList[persons[index]] = tmp
+
+            # 최근 우수한 순서 찾기
+            sort_value = sorted(topList.items(), key=lambda k: (k[1][1],k[1][0]))
+            self.timeTable.append([sort_value[-1][1][0], sort_value[-1][0]])
+
+
+    def q(self, t):
+        """
+        :type t: int
+        :rtype: int
+        """
+        p = -1
+        for time, person in self.timeTable:
+            if time > t:
+                break
+            p = person
+
+        return p
+
+=======================================================================================================================
+2차시 역시 시간초과
+class TopVotedCandidate(object):
+
+    def __init__(self, persons, times):
+        """
+        :type persons: List[int]
+        :type times: List[int]
+        """
+        self.timeTable = [[-1,-1]]
+        topList = {}
+        self.time_table = {}
+        max = 0
+        for index in range(len(persons)):
+            person = persons[index]
+            if  person not in topList:
+                topList[person] = 1
+            else:
+                topList[person] += 1
+
+            top_person_count = topList[person]
+
+            if max <= top_person_count:
+                max = top_person_count
+                if person != self.timeTable[-1][1]:
+                    self.timeTable.append([times[index],person])
+                    
+        self.timeTable = self.timeTable[1:]
+
+    def q(self, t):
+        """
+        :type t: int
+        :rtype: int
+        """
+        index = 0
+        for index ,(time, person)in enumerate(self.timeTable):
+            if time > t:
+                index -= 1
+                break
+        return self.timeTable[index][1]

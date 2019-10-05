@@ -1,0 +1,12 @@
+-> np.array로 변환하여 속도가 느려진듯 ㅠ
+
+import numpy as np
+
+class Solution:
+    def matrixReshape(self, nums: List[List[int]], r: int, c: int) -> List[List[int]]:
+        # try - exception은 너무쉬워서 사용 x
+        nums = np.array(nums)
+        shape = nums.shape
+        if  len(nums) * len(nums[0]) % (r * c) == 0:
+            return nums.reshape(r,c)
+        return nums

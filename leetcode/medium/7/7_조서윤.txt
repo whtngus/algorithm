@@ -1,0 +1,9 @@
+class Solution:
+    def reverse(self, x: int) -> int:
+        number = str(x)[::-1]
+
+        if str(number)[-1] == '-':
+            number = int('-'+str(number)[:-1])
+
+        number = int(number)
+        return number

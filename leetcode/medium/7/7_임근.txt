@@ -1,0 +1,5 @@
+var reverse = function(x) {
+    let result = +String(Math.abs(x)).split('').reverse().join('');
+    if( result > 2147483647 ) return 0;
+    return x > 0 ? result : -result;
+};

@@ -1,0 +1,34 @@
+Runtime: 10 ms, faster than 84.59% of Java online submissions for Non-decreasing Array.
+Memory Usage: 42 MB, less than 32.93% of Java online submissions for Non-decreasing Array.
+
+class Solution {
+    public boolean checkPossibility(int[] nums) {
+        int count = 0;
+        int numsLength = nums.length;
+
+        if(numsLength <=  2){
+            return true;
+        }
+        if(nums[0] > nums[1]){
+            nums[0] = nums[1];
+            count++;
+        }
+        
+        for(int i=1; i < numsLength - 1;i++){
+            if(nums[i] > nums[i + 1] ){
+                count++;
+                if(nums[i-1] > nums[i+1]){
+                    nums[i+1] = nums[i];
+                }else{
+                    nums[i] = nums[i-1];
+                }
+            }
+            
+            if(count>=2){
+                return false;
+            }
+        }
+        
+        return true;
+    }
+}

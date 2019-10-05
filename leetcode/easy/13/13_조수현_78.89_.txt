@@ -1,0 +1,19 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        num_one_dict = {"I" : 1 , "V" : 5 , "X" : 10, "L" : 50,
+                   "C" : 100, "D" : 500, "M" : 1000}
+        num_two_dict = {"IV" : 4,"IX" : 9,"XL" : 40,"XC":90,
+                       "CD":400,"CM":900}
+        s_len = len(s)
+        index = 0
+        cost = 0
+        while True:
+            if index >= s_len:
+                return cost
+            if s[index:index+2] in num_two_dict:
+                cost += num_two_dict[s[index:index+2]]
+                index += 2
+                continue
+                
+            cost += num_one_dict[s[index]]
+            index += 1

@@ -1,0 +1,105 @@
+1차시 실패
+import java.util.Collections;
+
+class Solution {
+    private Map<Character, int[]> countMap;
+    
+    public List<List<Integer>> largeGroupPositions(String S) {
+        this.countMap = new HashMap<>();
+        int sLen = S.length();
+        int count = 0;
+        char lastChar = ' ';
+        char nowChar = ' ';
+        for(int i=0;i<sLen;i++){
+            nowChar = S.charAt(i);
+            if(nowChar != lastChar){
+                checkMax(lastChar, count,i);
+                lastChar = nowChar;
+                count = 0;
+            }
+            count ++;
+        }
+        
+        if(nowChar != lastChar || count>= 3){
+            checkMax(lastChar, count,sLen);
+        }
+        
+        List<List<Integer>> results = new ArrayList<>();
+        for(int[] target : countMap.values()){
+            List<Integer> result = new ArrayList<>();
+            result.add(target[1] - target[0]);
+            result.add(target[1] - 1);
+            results.add(result);
+        }
+        
+        Collections.sort(results,new Comparator<List<Integer>>() {
+            @Override 
+            public int compare(List<Integer> b1, List<Integer> b2) { 
+                return (Integer)b1.get(0) > (Integer)b2.get(0) ? 1:-1;     
+            }
+        });
+        
+        return results;
+    }
+    
+    private void checkMax(char target, int count,int index){
+        if(count < 3){
+            return;
+        }
+        
+        if(countMap.containsKey(target)){
+            if(countMap.get(target)[0] < count){
+                countMap.put(target,new int[]{count, index});
+            }
+        }else{
+            countMap.put(target,new int[]{count,index});
+        }
+    }
+}
+
+
+
+"nnnhaaannnm"
+내정답 : [[0,2],[4,6]]
+예상 :  [[0,2],[4,6],[7,9]] 
+--> 중복 제거로 잘못 이해했음 다시 풀기 맵 제거 
+=========================================================================
+2차시
+import java.util.Collections;
+
+class Solution {
+    private List<List<Integer>> countList;
+    
+    public List<List<Integer>> largeGroupPositions(String S) {
+        this.countList = new ArrayList<>();
+        int sLen = S.length();
+        int count = 0;
+        char lastChar = ' ';
+        char nowChar = ' ';
+        for(int i=0;i<sLen;i++){
+            nowChar = S.charAt(i);
+            if(nowChar != lastChar){
+                checkMax(count,i);
+                lastChar = nowChar;
+                count = 0;
+            }
+            count ++;
+        }
+        
+        if(nowChar != lastChar || count>= 3){
+            checkMax(count,sLen);
+        }
+      
+        return countList;
+    }
+    
+    private void checkMax(int count,int index){
+        if(count < 3){
+            return;
+        }
+        List<Integer> result = new ArrayList<>();       
+        result.add(index - count);
+        result.add(index- 1);
+        countList.add(result);
+    }
+}

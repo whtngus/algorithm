@@ -1,0 +1,11 @@
+class Solution:
+    def reverse(self, x: int) -> int:
+        str_x = str(x)[::-1]
+        
+        if str_x[-1] == '-':
+            x = int("-"+str_x[:-1])
+        else:
+            x = int(str_x)
+        if x >= pow(2,31) or x < -pow(2,31):
+            return 0
+        return x

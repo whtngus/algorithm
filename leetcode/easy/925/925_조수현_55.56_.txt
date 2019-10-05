@@ -1,0 +1,27 @@
+class Solution:
+    def isLongPressedName(self, name: str, typed: str) -> bool:
+        count = 0
+        length = len(typed)
+        for index,target in enumerate(name):
+            if length <= count+index:
+                    return False
+            value = typed[count+index]
+            if target == value:
+                continue
+            count += 1
+            
+            while True:
+                if length <= count+index:
+                    return False
+                
+                if value == typed[count+index]: 
+                    count += 1
+                else:
+                    break
+                
+            if target != typed[count+index]:
+                return False
+        
+        return True
+        
+        

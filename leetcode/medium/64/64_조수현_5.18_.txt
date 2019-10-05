@@ -1,0 +1,123 @@
+1차 제출 
+runtime Error
+class Solution {
+    int[][] costs;
+    int[][] target;
+    int width;
+    int height;
+    public int minPathSum(int[][] grid) {
+        target = grid;
+        height = grid.length;
+        width = grid[0].length;
+        costs = new int[height][width];
+        costs[0][0] = grid[0][0];
+        calCost(0,1);
+        calCost(1,0);
+        return costs[height - 1][width - 1];
+    }
+    
+    private void calCost(int indexX,int indexY){
+        int cost = target[indexX][indexY];
+        if(indexX == 0){        
+            cost += costs[indexX][indexY - 1];
+        }else if(indexY == 0){
+            cost += costs[indexX - 1][indexY];   
+        }else{
+            if(costs[indexX][indexY - 1] == 0){
+                cost += costs[indexX - 1][indexY];
+            }else if(costs[indexX - 1][indexY] == 0){
+                cost += costs[indexX][indexY - 1];
+            }else{
+                cost += costs[indexX][indexY - 1] < costs[indexX - 1][indexY] ? costs[indexX][indexY - 1] : costs[indexX - 1][indexY];     
+            }
+        }
+        
+        if(costs[indexX][indexY] > cost || costs[indexX][indexY] == 0){
+            costs[indexX][indexY] = cost;
+        }else{
+            return;
+        }
+        
+        if(indexX + 1 >= height && indexY + 1 >= width){
+            return;
+        }else if(indexX + 1 >= height){
+            calCost(indexX,indexY + 1);
+        }else if(indexY + 1 >= width){
+            calCost(indexX + 1,indexY);
+        }else{
+            calCost(indexX + 1,indexY);
+            calCost(indexX,indexY + 1);
+        }
+        
+    }
+}
+
+
+==> 파라메타를 늘리고 연산량을 줄이기
+=========================================================================================================
+2차시
+==> 속도 에러가아니라 그냥 런타임에러 ㅠ
+class Solution {
+    int[][] costs;
+    int[][] target;
+    int width;
+    int height;
+    public int minPathSum(int[][] grid) {
+        target = grid;
+        height = grid.length;
+        width = grid[0].length;
+        costs = new int[height][width];
+        costs[0][0] = grid[0][0];
+        if(height == 1 && width == 1){
+            costs[0][0] = grid[0][0];
+        }else if(height == 1){
+            calCost(0,1,false);
+        }else if(width == 1){
+            calCost(1,0,true);
+        }else{
+            calCost(0,1,false);
+            calCost(1,0,true);
+        }
+        return costs[height - 1][width - 1];
+    }
+    
+    private void calCost(int indexX,int indexY,boolean changeX){
+        int cost = target[indexX][indexY];
+        if(changeX){
+            cost += costs[indexX - 1][indexY];
+        }else{
+            cost += costs[indexX][indexY - 1];
+        }
+        
+        // if(indexX == 0){        
+        //     cost += costs[indexX][indexY - 1];
+        // }else if(indexY == 0){
+        //     cost += costs[indexX - 1][indexY];   
+        // }else if(costs[indexX][indexY - 1] == 0){
+        //     cost += costs[indexX - 1][indexY];
+        // }else if(costs[indexX - 1][indexY] == 0){
+        //     cost += costs[indexX][indexY - 1];
+        // }else{
+        //     cost += costs[indexX][indexY - 1] < costs[indexX - 1][indexY] ? costs[indexX][indexY - 1] : costs[indexX - 1][indexY];     
+        // }
+        
+        
+        if(costs[indexX][indexY] > cost || costs[indexX][indexY] == 0){
+            costs[indexX][indexY] = cost;
+        }else{
+            return;
+        }
+        
+        if(indexX + 1 >= height && indexY + 1 >= width){
+            return;
+        }else if(indexX + 1 >= height){
+            calCost(indexX,indexY + 1,false);
+        }else if(indexY + 1 >= width){
+            calCost(indexX + 1,indexY,true);
+        }else{
+            calCost(indexX + 1,indexY,true);
+            calCost(indexX,indexY + 1,false);
+        }
+        
+    }
+}

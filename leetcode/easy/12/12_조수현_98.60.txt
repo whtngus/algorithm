@@ -1,0 +1,27 @@
+class Solution:
+    def intToRoman(self, num: int) -> str:
+        symbol = ["I","V","X","L","C","D","M"]
+        result = ''
+        while int(num) != 0:
+            target = int(num % 10)
+            num /= 10
+            check = False
+            tmp = ''
+            if target == 9:
+                result = symbol[0] + symbol[2] + result
+                check = True
+            elif target == 4:
+                result = symbol[0] + symbol[1] + result
+                check = True
+            elif target >= 5:
+                tmp = symbol[1]
+                target -= 5
+            
+            if check is not True:
+                tmp = tmp + symbol[0]*target
+                result = tmp + result
+            if len(symbol) > 1:
+                del symbol[1]
+            del symbol[0]
+            
+        return result
