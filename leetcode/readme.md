@@ -10,8 +10,14 @@
 - 3회차 : 12(Medium), 35, 7<br>
 - 4회차 : 400(Medium), 1<br>
 - 5회차 : 441<br>
-- 6회차 (2019-08-16): 556(Medium), 13, 1046
-- 7회차 (2019-08-29): 64(Medium), 160, 64
-- 8회차 (2019-09-18): 974(Medium), 14, 104
-- 9회차 : 
+- 6회차 (2019-08-16) : 556(Medium), 13, 1046
+- 7회차 (2019-08-29) : 64(Medium), 160, 64
+- 8회차 (2019-09-18) : 974(Medium), 14, 104
+- 9회차 (2019-10-06) : 86(Medium), 21
+>> 86. Partition List
+>>  https://leetcode.com/problems/partition-list/submissions/
+>> 21. Merge Two Sorted Lists
+>>  https://leetcode.com/problems/merge-two-sorted-lists/
+>> 350. Intersection of Two Arrays II
+>>>    https://leetcode.com/problems/intersection-of-two-arrays-ii/
 ```
