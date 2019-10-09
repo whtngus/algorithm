@@ -1,0 +1,19 @@
+Medium
+187. Repeated DNA Sequences
+https://leetcode.com/problems/repeated-dna-sequences/
+
+class Solution:
+    def findRepeatedDnaSequences(self, s: str) -> List[str]:
+        s_len = len(s)
+        if s_len <= 10:
+            return []
+        history_set = set()
+        result = set()
+        for i in range(s_len - 9):
+            comparison_target =  s[i:i+10]
+            if comparison_target in history_set:
+                result.add(comparison_target)
+            else:
+                history_set.add(comparison_target)
+        del history_set
+        return list(result)

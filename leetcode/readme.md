@@ -20,4 +20,12 @@
         https://leetcode.com/problems/merge-two-sorted-lists/
     350. Intersection of Two Arrays II
         https://leetcode.com/problems/intersection-of-two-arrays-ii/
+- 10회차 (2019-10-09) : 187(Medium), 268, 796
+    187. Repeated DNA Sequences
+        https://leetcode.com/problems/repeated-dna-sequences/
+    268. Missing Number
+        https://leetcode.com/problems/missing-number/
+    796. Rotate String
+        https://leetcode.com/problems/rotate-string/
+    
 ```

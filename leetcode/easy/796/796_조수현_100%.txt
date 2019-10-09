@@ -1,0 +1,22 @@
+796. Rotate String
+https://leetcode.com/problems/rotate-string/
+
+class Solution {
+    public boolean rotateString(String A, String B) {
+        int startIndex;
+        int lengths = B.length();
+        if(lengths != A.length()){
+            return false;
+        }
+        for(startIndex=1;startIndex < lengths;startIndex++){
+            if(!B.contains(A.substring(0,startIndex))){
+                break;
+            }
+        }
+        String other = A.substring(startIndex-1);   
+        if(B.substring(0,other.length()).equals(other)){
+            return true;
+        }
+        return false;
+    }
+}
