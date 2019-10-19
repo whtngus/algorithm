@@ -1,0 +1,45 @@
+704. Binary Search
+https://leetcode.com/problems/binary-search/
+100%
+1차시 
+class Solution {
+    public int search(int[] nums, int target) {
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==target){
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+
+2차시  %가 낮아서 다시 9.72
+class Solution {
+    public int search(int[] nums, int target) {
+        int min=0,max=nums.length - 1;
+        int findIndex;
+        if(max == 0){
+            return nums[0] == target ? 0 : -1;
+        }
+        while(true){
+            findIndex = (int)(min+max)/2;
+            if(nums[findIndex] == target){
+                return findIndex;
+            }else if(nums[findIndex] > target){
+                max = findIndex - 1;
+            }else{
+                min = findIndex + 1;
+            }
+            
+            if(min>=max){
+                if(nums[min] == target){
+                    return min;
+                }
+                break;    
+            }
+        }
+        return -1;
+    }
+}
+
+

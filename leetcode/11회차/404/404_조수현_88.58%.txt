@@ -1,0 +1,27 @@
+404. Sum of Left Leaves
+https://leetcode.com/problems/sum-of-left-leaves/
+88.58%
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def sumOfLeftLeaves(self, root: TreeNode) -> int:
+        return self.sum_left(root,0)
+    
+    def sum_left(self,target_node,left_leaves):
+        if target_node == None:
+            return left_leaves
+        elif target_node.left == None:
+            return self.sum_left(target_node.right,left_leaves)
+        
+        node = target_node.left
+        if node.left == None and node.right == None:
+            return node.val + self.sum_left(target_node.right,left_leaves)
+        else:
+            return self.sum_left(node,0) + self.sum_left(target_node.right,left_leaves)
+            
