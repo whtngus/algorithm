@@ -37,5 +37,9 @@
         https://leetcode.com/problems/binary-search/
     404. Sum of Left Leaves
         https://leetcode.com/problems/sum-of-left-leaves/
-    
+- 12회차 (2019-11-13) : 1004, 860
+    1005. Maximize Sum Of Array After K Negations
+        https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/
+    860. Lemonade Change
+        https://leetcode.com/problems/lemonade-change/submissions/
 ```

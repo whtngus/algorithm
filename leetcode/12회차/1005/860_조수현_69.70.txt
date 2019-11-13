@@ -1,0 +1,26 @@
+Easy
+860. Lemonade Change
+https://leetcode.com/problems/lemonade-change/submissions/
+69.70%
+
+class Solution:
+    def lemonadeChange(self, bills: List[int]) -> bool:
+        cost = [0,0]
+        for bill in bills:
+            if bill == 5:
+                cost[0] += 1
+                continue
+            elif bill == 10:
+                cost[1] += 1
+                cost[0] -= 1
+            else:
+                if cost[1] == 0 and cost[0] >= 3:
+                    cost[0] -= 3
+                    continue
+                cost[1] -= 1
+                cost[0] -= 1
+                
+            if cost[0] < 0 or cost[1] < 0:
+                return False    
+            
+        return True

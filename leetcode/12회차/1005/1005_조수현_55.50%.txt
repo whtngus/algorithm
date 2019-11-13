@@ -1,0 +1,19 @@
+Easy
+1005. Maximize Sum Of Array After K Negations
+https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/
+55.50%
+
+class Solution:
+    def largestSumAfterKNegations(self, A: List[int], K: int) -> int:
+        A.sort()
+        abs_min_index = 0
+        for i in range(K):
+            if A[abs_min_index] > abs(A[i]):
+                abs_min_index = i
+            if A[i] < 0:
+                A[i] *= -1
+            else:
+                if (K - i) % 2 == 1:
+                    A[abs_min_index] *= -1
+                break
+        return sum(A)
