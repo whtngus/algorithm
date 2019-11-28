@@ -1,0 +1,35 @@
+Easy
+860. Lemonade Change
+https://leetcode.com/problems/lemonade-change/submissions/
+Runtime: 144 ms, faster than 96.21% of Python
+Memory Usage: 12.7 MB, less than 100.00% of Python3
+
+class Solution:
+    def lemonadeChange(self, bills: List[int]) -> bool:
+        result = 1
+        fivemoney = 0
+        tenmoney = 0
+        for x in bills :
+            if x == 5 :
+                fivemoney = fivemoney + 1
+
+            elif x == 10 :
+                if fivemoney >=1 :
+                    tenmoney = tenmoney +1
+                    fivemoney = fivemoney -1
+
+                else :
+                    result = 0
+                    break
+
+            elif  x == 20 :
+                if fivemoney >=1 and tenmoney >=1 :
+                    tenmoney = tenmoney -1
+                    fivemoney = fivemoney -1
+                elif fivemoney >=3 :
+                    fivemoney = fivemoney -3
+                else :
+                    result = 0
+                    break
+
+        return result
