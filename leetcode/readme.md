@@ -38,6 +38,9 @@
 </details>
 
 
+<details markdown="1">
+<summary> 11 ~ 20 회차 </summary>
+
 ```
 - 11회차 (2019-10-19) : 1129(Medium),704, 404
     1129. Shortest Path with Alternating Colors
@@ -51,4 +54,11 @@
         https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/
     860. Lemonade Change
         https://leetcode.com/problems/lemonade-change/submissions/
+- 13회차 (2020-01-09) : 383, 
+    383.  Ransom Note - Easy
+        https://leetcode.com/problems/ransom-note/
+    100. Same Tree - Easy
+        https://leetcode.com/problems/same-tree/
 ```
+
+</details>

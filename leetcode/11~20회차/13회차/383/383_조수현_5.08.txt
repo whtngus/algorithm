@@ -1,0 +1,26 @@
+383. Ransom Note - Easy
+https://leetcode.com/problems/ransom-note/
+5.08%
+
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        if ransomNote == "":
+            return True
+        # make Counter map
+        ransomNote_count = {}
+        for char in ransomNote:
+            if char in ransomNote_count:
+                ransomNote_count[char] += 1
+            else:
+                ransomNote_count[char] = 1
+        # check
+        for m in magazine:
+            print(ransomNote_count)
+            if m in ransomNote_count:
+                if ransomNote_count[m] == 1:
+                    del ransomNote_count[m]
+                else:
+                    ransomNote_count[m] -= 1
+            if len(ransomNote_count) == 0:
+                return True
+        return False
