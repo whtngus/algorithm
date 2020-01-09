@@ -7,6 +7,9 @@
 회차_이름_cpu상위%.~~
 
 ## 알고리즘 풀이 기록
+<details>
+<summary> 1 ~ 10회차 </summary>
+<div markdown="1">
 ```
 - 1회차 : 655, 867
 - 2회차 : 438(Medium),911, 925
@@ -30,6 +33,13 @@
         https://leetcode.com/problems/missing-number/
     796. Rotate String
         https://leetcode.com/problems/rotate-string/
+
+```
+</div>
+</details>
+
+
+```
 - 11회차 (2019-10-19) : 1129(Medium),704, 404
     1129. Shortest Path with Alternating Colors
         https://leetcode.com/problems/shortest-path-with-alternating-colors/
