@@ -7,9 +7,8 @@
 회차_이름_cpu상위%.~~
 
 ## 알고리즘 풀이 기록
-<details>
+<details markdown="1">
 <summary> 1 ~ 10회차 </summary>
-<div markdown="1">
 
 ```
 - 1회차 : 655, 867
@@ -36,7 +35,6 @@
         https://leetcode.com/problems/rotate-string/
 ```
 
-</div>
 </details>
 
 
