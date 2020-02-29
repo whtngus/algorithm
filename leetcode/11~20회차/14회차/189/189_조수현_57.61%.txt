@@ -1,0 +1,19 @@
+189. Rotate Array
+https://leetcode.com/problems/rotate-array/
+57.61%
+
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        nums_len = len(nums)
+        if k == 0 or k == nums_len or nums_len == 1:
+            return
+        k = k % nums_len
+        new_nums= nums[-k:] + nums[:nums_len-k]
+        print(nums[-k:])
+        print(nums[:k])
+        print(new_nums)
+        for i,v in enumerate(new_nums):
+            nums[i] = v

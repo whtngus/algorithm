@@ -1,0 +1,72 @@
+EASY
+633. Sum of Square Numbers
+https://leetcode.com/problems/sum-of-square-numbers/
+5.04%  7.14%
+
+1차시 실패  
+실패 데이터 2038480973
+class Solution {
+    public boolean judgeSquareSum(int c) {
+        int sqrt = (int)Math.sqrt(c) + 1;
+        int sum,j,aSquare;
+        for(int a = (int)Math.sqrt(sqrt);a<=sqrt;a++){
+            aSquare = a*a; 
+            for(j=a;j>=0;j--){
+                sum = aSquare + j*j;
+                if(sum == c){
+                    return true;
+                }else if(sum < c){
+                    break;
+                }
+            }
+        }
+        return false;
+    }
+}
+
+2차시
+오류는 해결 int 범위 초과한 쓰래기값이여서 -> long 으로 변경후 시간초과 
+class Solution {
+    public boolean judgeSquareSum(int c) {
+        int sqrt = (int)Math.sqrt(c);
+        int j;
+        long sum=0,aSquare;
+        for(int a = (int)Math.sqrt(sqrt);a<=sqrt;a++){
+            aSquare = a*a; 
+            for(j=a;j>=0;j--){
+                sum = aSquare + j*j;
+                if(sum == c){
+                    return true;
+                }else if(sum < c){
+                    break;
+                }
+            }
+        }
+        return false;
+    }
+}
+
+3차시 
+class Solution {
+    public boolean judgeSquareSum(int c) {
+        int sqrt = (int)Math.sqrt(c);
+        int j;
+        long sum=0,aSquare;
+        if(sqrt*sqrt == c){
+            return true;
+        }
+        for(int a = (int)Math.sqrt(sqrt);a<=sqrt;a++){
+            aSquare = a*a; 
+            for(j=a;j>=0;j--){
+                sum = aSquare + j*j;
+                if(sum < c){
+                    break;
+                }else if(sum == c){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}
+

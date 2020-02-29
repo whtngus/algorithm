@@ -54,11 +54,16 @@
         https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/
     860. Lemonade Change
         https://leetcode.com/problems/lemonade-change/submissions/
-- 13회차 (2020-01-09) : 383, 
+- 13회차 (2020-01-09) : 383, 100
     383.  Ransom Note - Easy
         https://leetcode.com/problems/ransom-note/
     100. Same Tree - Easy
         https://leetcode.com/problems/same-tree/
+- 14회차 (2020-02-29) : 633, 189  (Medium 추가 예정)
+    633. Sum of Square Numbers
+        https://leetcode.com/problems/sum-of-square-numbers/
+    189. Rotate Array
+        https://leetcode.com/problems/rotate-array/
 ```
 
 </details>
