@@ -1,0 +1,32 @@
+https://leetcode.com/problems/asteroid-collision/
+735. Asteroid Collision
+Medium 
+11.80%
+
+class Solution:
+    def asteroidCollision(self, asteroids: List[int]) -> List[int]:
+        survive_asteroids  = [asteroids[0]]
+        survive_is_nature = [True if asteroids[0] > 0 else False]
+        for v in asteroids[1:]:
+            is_nature = True if v > 0 else False
+            while True:
+                if len(survive_asteroids) == 0:
+                    survive_asteroids.append(v)
+                    survive_is_nature.append(is_nature)
+                    break
+                if not survive_is_nature[-1] or (survive_is_nature[-1] and is_nature):
+                    survive_asteroids.append(v)
+                    survive_is_nature.append(is_nature)
+                    break
+                    
+                survive_v = survive_asteroids[-1]
+                if survive_v == -v:
+                    survive_asteroids.pop()
+                    survive_is_nature.pop()
+                    break
+                elif survive_v > -v:
+                    break
+                else:
+                    survive_asteroids.pop()
+                    survive_is_nature.pop()
+        return survive_asteroids
