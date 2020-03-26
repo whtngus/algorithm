@@ -59,11 +59,16 @@
         https://leetcode.com/problems/ransom-note/
     100. Same Tree - Easy
         https://leetcode.com/problems/same-tree/
-- 14회차 (2020-02-29) : 633, 189  (Medium 추가 예정)
+- 14회차 (2020-03-09) : 735(Medium), 633, 189
+    735. Asteroid Collision
+        https://leetcode.com/problems/asteroid-collision/
     633. Sum of Square Numbers
         https://leetcode.com/problems/sum-of-square-numbers/
     189. Rotate Array
         https://leetcode.com/problems/rotate-array/
+- 15회차 (2020-03-26) : 101
+    101. Symmetric Tree
+        https://leetcode.com/problems/symmetric-tree/
 ```
 
 </details>
