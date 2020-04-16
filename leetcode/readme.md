@@ -66,7 +66,7 @@
         https://leetcode.com/problems/sum-of-square-numbers/
     189. Rotate Array
         https://leetcode.com/problems/rotate-array/
-- 15회차 (2020-03-26) : 101, 605
+- 15회차 (2020-04-01) : 101, 605
     101. Symmetric Tree
         https://leetcode.com/problems/symmetric-tree/
     605. Can Place Flowers
