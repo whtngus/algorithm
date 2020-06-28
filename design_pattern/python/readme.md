@@ -1,4 +1,5 @@
 # 파이썬 디자인 패턴 2/e 책 정리
+코드 : http://www.acornpub.co.kr/book/python-design-patterns-2e#author <br>
 
 ## 1장 디자인 패턴 개요
 
