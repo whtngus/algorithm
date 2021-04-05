@@ -71,6 +71,9 @@
         https://leetcode.com/problems/symmetric-tree/
     605. Can Place Flowers
         https://leetcode.com/problems/can-place-flowers/
+- 16회차 (2021-04-05) : 344
+    444. Reverse String
+        https://leetcode.com/problems/reverse-string/
 ```
 
 </details>
