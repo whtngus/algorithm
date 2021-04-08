@@ -34,7 +34,7 @@ class Solution:
         return "".join(result_str)
 
 
-# 코드 개선 - 투포인트
+# 코드 개선 - 투포인트  78.23
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         def count_match_case(befor_list,after_list):
