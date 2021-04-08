@@ -1,3 +1,4 @@
+# 5_조수현_55.96.txt
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         def count_match_case(befor_list,after_list):
@@ -31,6 +32,38 @@ class Solution:
                     result_str = s_list[i-diff:i+diff]
 
         return "".join(result_str)
+
+
+# 코드 개선 - 투포인트
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        def count_match_case(befor_list,after_list):
+            match_len = 0
+            for b,r in zip(befor_list,after_list):
+                if b != r:
+                    break
+                match_len += 2
+            return match_len
+
+        s_len = len(s)
+        if s_len < 2:
+            return s
+
+        s_list = list(s)
+        s_reverse_list = s[::-1]
+
+        max_len = 0
+        result_str = s_list[0]
+        for i, c in enumerate(s_list[1:],start=1):
+            match_len = max(1 + count_match_case(s_reverse_list[s_len - i:],s_list[i + 1:]), count_match_case(s_reverse_list[s_len -i:],s_list[i:]))
+            if match_len > max_len:
+                max_len = match_len
+                diff = int(match_len/2)
+                add_count = match_len %2
+                result_str = s_list[i-diff:i+diff+add_count]
+
+        return "".join(result_str)
+
 
 
 
