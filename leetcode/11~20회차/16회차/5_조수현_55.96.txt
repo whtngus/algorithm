@@ -1,0 +1,36 @@
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        def count_match_case(befor_list,after_list):
+            match_len = 0
+            for b,r in zip(befor_list,after_list):
+                if b != r:
+                    break
+                match_len += 2
+            return match_len
+
+        s_list = list(s)
+        max_len = 0
+        result_str = s_list[0]
+        for i, c in enumerate(s_list[1:],start=1):
+            # 하나의 중심 match case
+            match_len = 1 + count_match_case(s_list[i-1::-1],s_list[i + 1:])
+
+            if match_len > max_len:
+                max_len = match_len
+                diff = int(match_len/2)
+                result_str = s_list[i-diff:i+diff+1]
+            # 두개의 중심 match case
+            if c == s_list[i-1] and i > 0:
+                if i == 1:
+                    match_len  = 2
+                else:
+                    match_len = 2 + count_match_case(s_list[i-2::-1], s_list[i + 1:])
+                if match_len > max_len:
+                    max_len = match_len
+                    diff = int(match_len/2)
+                    result_str = s_list[i-diff:i+diff]
+
+        return "".join(result_str)
+
+
+

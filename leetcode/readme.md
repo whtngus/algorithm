@@ -71,11 +71,13 @@
         https://leetcode.com/problems/symmetric-tree/
     605. Can Place Flowers
         https://leetcode.com/problems/can-place-flowers/
-- 16회차 (2021-04-06) : 344, 49(Medium)
+- 16회차 (2021-04-06) : 344, 49(Medium), 5(Medium)
     344. Reverse String
         https://leetcode.com/problems/reverse-string/
     49. Group Anagrams
         https://leetcode.com/problems/group-anagrams/
+    5. Longest Palindromic Substring
+        https://leetcode.com/problems/longest-palindromic-substring/
 ```
 
 </details>
