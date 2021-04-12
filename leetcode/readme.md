@@ -78,6 +78,9 @@
         https://leetcode.com/problems/group-anagrams/
     5. Longest Palindromic Substring
         https://leetcode.com/problems/longest-palindromic-substring/
+- 17회차 (2021-04-12) : 74(Medium)
+    74. Search a 2D Matrix
+        https://leetcode.com/problems/search-a-2d-matrix/
 ```
 
 </details>

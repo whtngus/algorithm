@@ -1,0 +1,15 @@
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        def find_low(i,j):
+            if j <= i:
+                return i
+            mid = int((i + j)/2)
+            if matrix[mid][-1] < target:
+                return find_low(mid+1, j)
+            if matrix[mid][-1] == target:
+                return mid
+            return find_low(i, mid)
+
+        return target in matrix[find_low(0,len(matrix) - 1)]
+
+
