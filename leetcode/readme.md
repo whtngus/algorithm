@@ -87,6 +87,9 @@
     2. Add Two Numbers
         https://leetcode.com/problems/add-two-numbers/
     24. Swap Nodes in Pairs
+- 19회차 (2021-04-28) : 739(Medium)
+    739. Daily Temperatures
+        https://leetcode.com/problems/daily-temperatures/
 ```
 
 </details>
