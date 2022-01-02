@@ -100,3 +100,18 @@
 ```
 
 </details>
+
+<details markdown="1">
+<summary> 21 ~ 30 회차 </summary>
+
+```
+- 21회차 () : 49(Medium), 1, 121
+    49. Group Anagrams
+        https://leetcode.com/problems/group-anagrams/
+    1. Two Sum
+        https://leetcode.com/problems/two-sum/
+    121. Best Time to Buy and Sell Stock
+        https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+```
+
+</details>

@@ -1,0 +1,21 @@
+# 30.15
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        l = len(nums)
+        for i in range(l):
+            t = nums[i]
+            for j in range(i + 1,l):
+                if t + nums[j] == target:
+                    return [i, j]
+
+
+# 방식 수정 52.03 으로 상승
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        d = {}
+        for i, v in enumerate(nums):
+            t = target - v
+            if t in d:
+                return [d[t], i]
+            d[v] = i

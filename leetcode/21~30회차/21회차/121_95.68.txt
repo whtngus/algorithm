@@ -1,0 +1,9 @@
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        d, c = 0, prices[0]
+        for v in prices[1:]:
+            if v < c:
+                c = v
+            elif v - c  > d:
+                d = v - c
+        return d
