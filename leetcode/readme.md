@@ -105,7 +105,7 @@
 <summary> 21 ~ 30 회차 </summary>
 
 ```
-- 21회차 () : 49(Medium), 1, 121
+- 21회차 (2021) : 49(Medium), 1, 121
     49. Group Anagrams
         https://leetcode.com/problems/group-anagrams/
     1. Two Sum
