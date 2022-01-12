@@ -90,7 +90,7 @@
 - 19회차 (2021-04-28) : 739(Medium)
     739. Daily Temperatures
         https://leetcode.com/problems/daily-temperatures/
-- 20회차 (2021-01-02) : 234, 344, 242
+- 20회차 (2022-01-02) : 234, 344, 242
     234. Palindrome Linked List
         https://leetcode.com/problems/palindrome-linked-list/
     344. Reverse String
@@ -105,7 +105,7 @@
 <summary> 21 ~ 30 회차 </summary>
 
 ```
-- 21회차 (2021) : 49(Medium), 1, 121
+- 21회차 (2022-01-10) : 49(Medium), 1, 121
     49. Group Anagrams
         https://leetcode.com/problems/group-anagrams/
     1. Two Sum
