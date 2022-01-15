@@ -1,0 +1,15 @@
+class Solution:
+    def longestZigZag(self, root: Optional[TreeNode]) -> int:
+        return max(self.zigzaz(0, root, True), self.zigzaz(0, root, False))
+
+    def zigzaz(self, deep, root, left):
+        if root == None:
+            return deep
+        l_d = 0
+        r_d = 0
+        if root.left is not None and not left:
+            l_d = deep + 1
+        elif root.right is not None and left:
+            r_d = deep + 1
+        return max(deep, self.zigzaz(l_d, root.left, not left),
+                   self.zigzaz(r_d, root.right, not left))

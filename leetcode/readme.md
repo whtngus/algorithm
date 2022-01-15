@@ -112,6 +112,9 @@
         https://leetcode.com/problems/two-sum/
     121. Best Time to Buy and Sell Stock
         https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+- 22회차 (2022-01-15): 1372(Medium)
+    1372. Longest ZigZag Path in a Binary Tree
+        https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/
 ```
 
 </details>
