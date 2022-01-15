@@ -1,0 +1,16 @@
+class Solution:
+    def pathInZigZagTree(self, label: int) -> List[int]:
+        if label == 1:
+            return [1]
+        target = int(math.log2(label))
+        labels = [label]
+        while True:
+            target -= 1
+            v = int(labels[-1]/2)
+            if v <= 1:
+                labels.append(v)
+                break
+            v = 2**(target + 1) - v + 2**(target) - 1
+            labels.append(v)
+
+        return labels[::-1]
