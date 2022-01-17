@@ -1,0 +1,26 @@
+class Solution:
+    def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if root == None:
+            return []
+        stack = [root]
+        condition = 'left'
+        result = [[root.val]]
+        while stack:
+            datas = stack
+            stack = []
+
+            for root in datas:
+                if root.left is not None:
+                    stack.append(root.left)
+                if root.right is not None:
+                    stack.append(root.right)
+
+            if condition == 'left':
+                condition = 'right'
+                temp = [i.val for i in stack[::-1]]
+            else:
+                condition = 'left'
+                temp = [i.val for i in stack]
+
+            result.append(temp)
+        return result[:-1]
