@@ -1,0 +1,14 @@
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        stack = []
+        tmp, index = 0, 0
+        a_len, b_len = len(a), len(b)
+        a, b = a[::-1], b[::-1]
+        while a_len > index or b_len > index:
+            tmp += int(a[index]) if a_len > index else 0
+            tmp += int(b[index]) if b_len > index else 0
+            stack.append(str(tmp % 2))
+            tmp = 0 if tmp < 2 else 1
+            index += 1
+        if tmp == 1: stack.append(str(tmp))
+        return "".join(stack[::-1])

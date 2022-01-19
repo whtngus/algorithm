@@ -119,6 +119,11 @@
         https://leetcode.com/problems/path-in-zigzag-labelled-binary-tree/
     103. Binary Tree Zigzag Level Order Traversal
         https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+- 23회차 (2021-01-19) : 67, 83
+    67. Add Binary
+        https://leetcode.com/problems/add-binary/
+    83. Remove Duplicates from Sorted List
+        https://leetcode.com/problems/remove-duplicates-from-sorted-list/
 ```
 
 </details>
