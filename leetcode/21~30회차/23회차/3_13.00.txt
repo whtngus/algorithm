@@ -1,0 +1,26 @@
+# 13 퍼 다시 도전
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        history = set()
+        max_length = 0
+        s_len = len(s)
+        start_index, end_index = 0, 0
+        while s_len > end_index:
+            target = s[end_index]
+            if target in history:
+                start_index += 1
+                end_index = start_index
+                if max_length < len(history):
+                    max_length = len(history)
+                    # print(history)
+                history = set()
+                continue
+            history.add(target)
+            end_index += 1
+        if max_length < len(history):
+            max_length = len(history)
+        return max_length
+
+
+
+#
